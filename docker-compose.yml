@@ -19,7 +19,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: dockerfiles/Dockerfile
+      dockerfile: Dockerfile
       args:
         TZ: ${TZ}
     volumes:
@@ -35,6 +35,7 @@ services:
       - .env
     environment:
       - DEBUG=True
+      - RUN_FRONTEND=true
   redis:
     image: redis:7
     volumes:
